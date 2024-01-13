@@ -74,9 +74,9 @@
     <div class="card-header bg-primary text-white"><a style="color: yellow" href="login">Login</a>   <a style="color: yellow;" href="register">Register</a></div>
     {% endif %}
     <div class="card-body messages-box">
-      
+
       <ul class="list-unstyled messages-list">
-        
+
         <!-- <li class="message received">
           <div class="message-text">
             <div class="message-sender">
@@ -115,9 +115,9 @@
 
           {% endif %}
         {% endfor %}
-        
+
       </ul>
-      
+
     </div>
     <br><br>
     <br><br>
@@ -138,7 +138,6 @@
   const messagesList = document.querySelector('.messages-list');
   const messageForm = document.querySelector('.message-form');
   const messageInput = document.querySelector('.message-input');
-
 
   messageForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -170,6 +169,7 @@
         'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
         'message': message
       })
+    })
       .then(response => response.json())
       .then(data => {
         const response = data.response;
